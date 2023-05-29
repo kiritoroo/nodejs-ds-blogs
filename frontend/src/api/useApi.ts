@@ -5,7 +5,16 @@ const axiosWrapper = useAxiosWrapper();
 export const useApi = () => {
 
   return {
-    strategyPOST
+    strategyPOST,
+    statePOST
+  }
+
+  function statePOST(code: string) {
+    const body = {
+      code: code
+    }
+
+    return axiosWrapper.post(`/state`, body);
   }
 
   function strategyPOST(code: string) {

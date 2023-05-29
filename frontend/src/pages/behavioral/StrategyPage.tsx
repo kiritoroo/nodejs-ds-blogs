@@ -11,7 +11,7 @@ import { ArticleHeader } from "@comp/Layout/ArticleHeader";
 import { ViewContent } from "@comp/Layout/ViewContent";
 import { ViewSidebar } from "@comp/Layout/ViewSidebar";
 import { SidebarInfo } from "@comp/SidebarInfo";
-import { TBlogSectionData, TBlogTopicData } from "@type/types";
+import { TBlogSectionData, TBlogTopicData, TDesignPatternData } from "@type/types";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io";
 import { HiOutlineHashtag } from "react-icons/hi";
@@ -21,7 +21,12 @@ import { Space } from "@comp/Space";
 import { BlogCodeEditor } from "@comp/Blog/BlogCodeEditor";
 import { useApi } from "@api/useApi";
 
-export default function StrategyPage() {
+interface Props {
+  info: TDesignPatternData;
+}
+
+export default function StrategyPage(props: Props) {
+  const { info } = props;
   const api = useApi();
   const contentSectionRef = React.useRef<HTMLElement>(null);
   const [letterCount, setLetterCount] = React.useState(0);
@@ -40,12 +45,6 @@ console.log(adultTicket.getPrice())`);
         setRunOutput(res.result);
       })
   }, [codeInput])
-
-  const dataTopics: TBlogTopicData[] = [
-    { icon: <HiOutlineHashtag size={15} color="#acbcc7"/>, title: "Design Pattern" },
-    { icon: <SiTypescript size={26} color="#2F74C0"/>, title: "TypeScript" },
-    { icon: <IoLogoNodejs size={26} color="#63975E"/>, title: "NodeJS" }
-  ]
 
   const dataSection1: TBlogSectionData = {
     header: "Strategy Design Pattern trong NodeJS",
@@ -129,7 +128,7 @@ export class PairTicketStrategy implements ITicketStrategy {
           và <BlogInlineCode>isAvailableChildAttraction()</BlogInlineCode> được triển khai để gọi tương ứng các phương thức của chiến lược.
         </BlogParagraph>
         <BlogCodeBlock
-          lang="js"
+          lang="ts"
           code={`// Ticket Context 
 export class Ticket {
   private _strategy: ITicketStrategy;
@@ -154,7 +153,7 @@ export class Ticket {
           Chương trình Demo
         </BlogParagraph>
         <BlogCodeEditor
-          lang="js"
+          lang="ts"
           code={ codeInput }
           setCode={ setCodeInput }
           onRun={ handleCallAPI }
@@ -168,18 +167,21 @@ export class Ticket {
   return (
     <React.Fragment>
       <ArticleHeader>
-        <ArticleTitle>【Behavioral】 Strategy Design Pattern</ArticleTitle>
+        <ArticleTitle>【Behavioral】 { info.name }</ArticleTitle>
       </ArticleHeader>
       <ArticleBody>
         <ViewContent ref={ contentSectionRef }>
-          <BlogTopic data={ dataTopics }/>
+          <BlogTopic data={ info.topics }/>
           <BlogSection data={ dataSection1 }/>
           <BlogSection data={ dataSection2 }/>
           <BlogSection data={ dataSection3 }/>
           <BlogSection data={ dataSection4 }/>
         </ViewContent>
         <ViewSidebar>
-          <SidebarInfo author="Kien Trung" publish="2023/05/20" letterCount={ letterCount }/>
+          <SidebarInfo 
+            author={ info.author }
+            publish={ `${info.publish.getFullYear()}/${info.publish.getMonth()+1}/${info.publish.getDate()}` }
+            letterCount={ letterCount }/>
           <Space/>
           <SidebarToc/>
         </ViewSidebar>

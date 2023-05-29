@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { css } from "@emotion/css";
 
 interface SingleHeadingData {
@@ -68,6 +68,10 @@ export const SidebarToc = (props: Props) => {
   const [activeId, setActiveId] = React.useState();
   const { headingElements } = useHeadingElements();
   useIntersectionObserver(setActiveId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <div className={sContainer}>

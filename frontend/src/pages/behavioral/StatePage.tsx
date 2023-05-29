@@ -11,7 +11,7 @@ import { ArticleHeader } from "@comp/Layout/ArticleHeader";
 import { ViewContent } from "@comp/Layout/ViewContent";
 import { ViewSidebar } from "@comp/Layout/ViewSidebar";
 import { SidebarInfo } from "@comp/SidebarInfo";
-import { TBlogSectionData, TBlogTopicData } from "@type/types";
+import { TBlogSectionData, TBlogTopicData, TDesignPatternData } from "@type/types";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io";
 import { HiOutlineHashtag } from "react-icons/hi";
@@ -19,15 +19,20 @@ import React from "react";
 import { SidebarToc } from "@comp/SidebarToc";
 import { Space } from "@comp/Space";
 import { BlogCodeEditor } from "@comp/Blog/BlogCodeEditor";
-import { useApiState } from "@api/useApi";
+import { useApi } from "@api/useApi";
 
-export default function StatePage() {
-  const api = useApiState();
+interface Props {
+  info: TDesignPatternData;
+}
+
+export default function StatePage(props: Props) {
+  const { info } = props;
+  const api = useApi();
   const contentSectionRef = React.useRef<HTMLElement>(null);
   const [letterCount, setLetterCount] = React.useState(0);
   const [codeInput, setCodeInput] = React.useState(`// Example Demo
-  const order = new Order()
-  console.log(order.shipOrder())`);
+const order = new Order()
+console.log(order.shipOrder())`);
   const [runOutput, setRunOutput] = React.useState<string[]>([]);
   
   React.useEffect(() => {
@@ -41,21 +46,15 @@ export default function StatePage() {
       })
   }, [codeInput])
 
-  const dataTopics: TBlogTopicData[] = [
-    { icon: <HiOutlineHashtag size={15} color="#acbcc7"/>, title: "Design Pattern" },
-    { icon: <SiTypescript size={26} color="#2F74C0"/>, title: "TypeScript" },
-    { icon: <IoLogoNodejs size={26} color="#63975E"/>, title: "NodeJS" }
-  ]
-
   const dataSection1: TBlogSectionData = {
     header: "State Design Pattern trong NodeJS",
     content: (
       <React.Fragment>
         <BlogParagraph>
-        Mẫu thiết kế State thuộc nhóm các mẫu thiết kế hành vi (Behavioral Design Patterns)
+          Mẫu thiết kế State thuộc nhóm các mẫu thiết kế hành vi (Behavioral Design Patterns)
         </BlogParagraph>
         <BlogQuote>
-        Một mẫu thiết kế State được sử dụng khi một đối tượng thay đổi hành vi của nó dựa trên trạng thái bên trong của nó. Nếu chúng ta phải thay đổi hành vi của một đối tượng dựa trên trạng thái của nó, chúng ta có thể có một biến trạng thái trong Đối tượng 
+          Một mẫu thiết kế State được sử dụng khi một đối tượng thay đổi hành vi của nó dựa trên trạng thái bên trong của nó. Nếu chúng ta phải thay đổi hành vi của một đối tượng dựa trên trạng thái của nó, chúng ta có thể có một biến trạng thái trong Đối tượng 
         </BlogQuote>
       </React.Fragment>
     )
@@ -142,10 +141,10 @@ export class CompletedOrderState implements IOrderState {
 } `}
         />
         <BlogParagraph>
-        Lớp <BlogInlineCode>Order()</BlogInlineCode>là lớp Context, đại diện cho đơn hàng. Nó lưu trữ một tham chiếu đến trạng thái hiện tại và chuyển tiếp các phương thức <BlogInlineCode>cancelOrder()</BlogInlineCode>, <BlogInlineCode>shipOrder()</BlogInlineCode> và <BlogInlineCode>completeOrder()</BlogInlineCode> cho trạng thái hiện tại.
+          Lớp <BlogInlineCode>Order()</BlogInlineCode>là lớp Context, đại diện cho đơn hàng. Nó lưu trữ một tham chiếu đến trạng thái hiện tại và chuyển tiếp các phương thức <BlogInlineCode>cancelOrder()</BlogInlineCode>, <BlogInlineCode>shipOrder()</BlogInlineCode> và <BlogInlineCode>completeOrder()</BlogInlineCode> cho trạng thái hiện tại.
         </BlogParagraph>
         <BlogCodeBlock
-          lang="js"
+          lang="ts"
           code={` 
 export class Order {
   private _state: IOrderState;        
@@ -194,18 +193,21 @@ export class Order {
   return (
     <React.Fragment>
       <ArticleHeader>
-        <ArticleTitle>【Behavioral】 State Design Pattern</ArticleTitle>
+        <ArticleTitle>【Behavioral】 { info.name }</ArticleTitle>
       </ArticleHeader>
       <ArticleBody>
         <ViewContent ref={ contentSectionRef }>
-          <BlogTopic data={ dataTopics }/>
+          <BlogTopic data={ info.topics }/>
           <BlogSection data={ dataSection1 }/>
           <BlogSection data={ dataSection2 }/>
           <BlogSection data={ dataSection3 }/>
           <BlogSection data={ dataSection4 }/>
         </ViewContent>
         <ViewSidebar>
-          <SidebarInfo author="Kien Trung" publish="2023/05/20" letterCount={ letterCount }/>
+          <SidebarInfo 
+            author={ info.author }
+            publish={ `${info.publish.getFullYear()}/${info.publish.getMonth()+1}/${info.publish.getDate()}` }
+            letterCount={ letterCount }/>
           <Space/>
           <SidebarToc/>
         </ViewSidebar>
