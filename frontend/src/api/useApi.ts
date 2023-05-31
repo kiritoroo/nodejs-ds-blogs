@@ -6,7 +6,9 @@ export const useApi = () => {
 
   return {
     strategyPOST,
-    statePOST
+    statePOST, 
+    observerPOST,
+    mediatorPOST,
   }
 
   function statePOST(code: string) {
@@ -24,19 +26,23 @@ export const useApi = () => {
 
     return axiosWrapper.post(`/strategy`, body);
   }
-}
 
-export const useApiState = () => {
 
-  return {
-    statePOST
-  }
-
-  function statePOST(code: string) {
+  function observerPOST(code: string) {
     const body = {
       code: code
     }
 
-    return axiosWrapper.post(`/state`, body);
+    return axiosWrapper.post(`/observer`, body);
+  }
+
+  
+  function mediatorPOST(code: string) {
+    const body = {
+      code: code
+    }
+
+    return axiosWrapper.post(`/mediator`, body);
   }
 }
+

@@ -16,7 +16,7 @@ interface Props {
   info: TDesignPatternData;
 }
 
-export default function VisitorMethodPate(props: Props) {
+export default function CommandPage(props: Props) {
   const { info } = props;
   const api = useApi();
   const contentSectionRef = React.useRef<HTMLElement>(null);

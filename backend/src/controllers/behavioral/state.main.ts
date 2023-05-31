@@ -15,7 +15,6 @@ export const stateMain = catchAsyncErrors(
       const { Order, CompletedOrderState, ShippedOrderState, NewOrderState } = require("@pattern/behavioral/state.pattern");
     `
     code += body.code;
-
     res.json({
       result: execCode(code)
     });

@@ -6,6 +6,7 @@ interface Props {
 }
 
 export const ArticleTitle = (props: Props) => {
+
   const { children } = props;
 
   return (
