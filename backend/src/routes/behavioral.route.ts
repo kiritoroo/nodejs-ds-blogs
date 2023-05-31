@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { strategyMain } from "@controller/behavioral/strategy.main";
 import { stateMain } from "@controller/behavioral/state.main";
 import { mediatorMain } from "@controller/behavioral/mediator.main";
+import { commandMain } from "@controller/behavioral/command.main";
 
 /**
  * @openapi
@@ -19,9 +20,12 @@ behavioralRouter
   .route("/state")
   .post( stateMain );
 
-
 behavioralRouter
   .route("/mediator")
   .post(mediatorMain);
+
+behavioralRouter
+  .route("/command")
+  .post(commandMain)
 
 export default behavioralRouter;

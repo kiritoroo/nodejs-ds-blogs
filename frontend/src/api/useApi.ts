@@ -9,6 +9,8 @@ export const useApi = () => {
     statePOST, 
     observerPOST,
     mediatorPOST,
+    iteratorPOST,
+    commandPOST,
   }
 
   function statePOST(code: string) {
@@ -43,6 +45,22 @@ export const useApi = () => {
     }
 
     return axiosWrapper.post(`/mediator`, body);
+  }
+
+  function iteratorPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/iterator`, body);
+  }
+
+  
+  function commandPOST(code: string) {
+    const body = {
+      code: code
+    }
+
+    return axiosWrapper.post(`/command`, body);
   }
 }
 

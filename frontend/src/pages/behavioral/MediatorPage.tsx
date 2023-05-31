@@ -25,7 +25,7 @@ interface Props {
   info: TDesignPatternData;
 }
 
-export default function StatePage(props: Props) {
+export default function MediatorPage(props: Props) {
   const { info } = props;
   const api = useApi();
   const contentSectionRef = React.useRef<HTMLElement>(null);
@@ -52,7 +52,7 @@ colleague2.send("");`);
   }, [codeInput])
 
   const dataSection1: TBlogSectionData = {
-    header: "MediatorPage Design Pattern trong NodeJS",
+    header: "Mediator Design Pattern trong NodeJS",
     content: (
       <React.Fragment>
         <BlogParagraph>
