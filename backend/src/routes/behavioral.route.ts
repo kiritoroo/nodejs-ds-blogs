@@ -3,6 +3,7 @@ import { strategyMain } from "@controller/behavioral/strategy.main";
 import { stateMain } from "@controller/behavioral/state.main";
 import { mediatorMain } from "@controller/behavioral/mediator.main";
 import { commandMain } from "@controller/behavioral/command.main";
+import { mementoMain } from "@controller/behavioral/memento.main";
 
 /**
  * @openapi
@@ -27,5 +28,9 @@ behavioralRouter
 behavioralRouter
   .route("/command")
   .post(commandMain)
+
+behavioralRouter
+  .route("/memento")
+  .post(mementoMain)
 
 export default behavioralRouter;

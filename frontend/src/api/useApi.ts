@@ -11,6 +11,7 @@ export const useApi = () => {
     mediatorPOST,
     iteratorPOST,
     commandPOST,
+    mementoPOST,
   }
 
   function statePOST(code: string) {
@@ -61,6 +62,14 @@ export const useApi = () => {
     }
 
     return axiosWrapper.post(`/command`, body);
+  }
+
+  function mementoPOST(code: string) {
+    const body = {
+      code: code
+    }
+
+    return axiosWrapper.post(`/memento`, body);
   }
 }
 
