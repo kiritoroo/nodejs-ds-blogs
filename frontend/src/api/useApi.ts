@@ -12,6 +12,12 @@ export const useApi = () => {
     iteratorPOST,
     commandPOST,
     mementoPOST,
+    bridgePOST,
+    decoratorPOST,
+    flyweightPOST,
+    factoryPOST,
+    builderPOST,
+    singletonPOST,
   }
 
   function statePOST(code: string) {
@@ -71,5 +77,49 @@ export const useApi = () => {
 
     return axiosWrapper.post(`/memento`, body);
   }
+
+  function bridgePOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/bridge`, body);
+  }
+
+  function decoratorPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/decorator`, body);
+  }
+
+  function flyweightPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/flyweight`, body);
+  }
+
+  function factoryPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/factory-method`, body);
+  }
+
+  function builderPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/builder`, body);
+  }
+
+  function singletonPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/singleton`, body);
+  }
+  
+
 }
 

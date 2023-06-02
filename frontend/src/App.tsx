@@ -7,6 +7,7 @@ import FactoryMethodPage from "@page/creational/FatoryMethodPage"
 import AbstractFactoryPage from "@page/creational/AbstractFactoryPage"
 import BuilderPage from "@page/creational/BuilderPage"
 import PrototypePage from "@page/creational/PrototypePage"
+import SingletonPage from "@page/creational/SingletonPage"
 import AdapterPage from "@page/structural/AdapterPage"
 import BridgePage from "@page/structural/BridgePage"
 import CompositePage from "@page/structural/CompositePage"
@@ -38,7 +39,7 @@ export const App = () => {
         <Route path="/abstract-factory" element={<AbstractFactoryPage info={designPaternsData.creational[1]}/>}/>
         <Route path="/builder" element={<BuilderPage info={designPaternsData.creational[2]}/>}/>
         <Route path="/prototype" element={<PrototypePage info={designPaternsData.creational[3]}/>}/>
-        <Route path="/singleton" element={<PrototypePage info={designPaternsData.creational[4]}/>}/>
+        <Route path="/singleton" element={<SingletonPage info={designPaternsData.creational[4]}/>}/>
         {/* Structural route */}
         <Route path="/adapter" element={<AdapterPage info={designPaternsData.structural[0]}/>}/>
         <Route path="/bridge" element={<BridgePage info={designPaternsData.structural[1]}/>}/>
