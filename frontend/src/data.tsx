@@ -18,7 +18,7 @@ export const designPaternsData: {
     { 
       name: "Factory Method Design Pattern",
       emoji: "🏭",
-      author: "Kien Trung",
+      author: "Mai Tue",
       publish: new Date(2023, 4, 20),
       url: "#/factory-method",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -34,7 +34,7 @@ export const designPaternsData: {
     { 
       name: "Builder Design Pattern",
       emoji: "⚒️",
-      author: "Kien Trung",
+      author: "Mai Tue",
       publish: new Date(2023, 4, 20),
       url: "#/builder",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -50,7 +50,7 @@ export const designPaternsData: {
     { 
       name: "Singleton Design Pattern",
       emoji: "1️⃣",
-      author: "Kien Trung",
+      author: "Mai Tue",
       publish: new Date(2023, 4, 20),
       url: "#/singleton",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -60,7 +60,7 @@ export const designPaternsData: {
     { 
       name: "Adapter Design Pattern",
       emoji: "🪝",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/adapter",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -76,7 +76,7 @@ export const designPaternsData: {
     { 
       name: "Composite Design Pattern",
       emoji: "🥪",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/composite",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -92,7 +92,7 @@ export const designPaternsData: {
     { 
       name: "Facade Design Pattern",
       emoji: "🏛️",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/facade",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -108,7 +108,7 @@ export const designPaternsData: {
     { 
       name: "Proxy Design Pattern",
       emoji: "⚗️",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/proxy",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -118,7 +118,7 @@ export const designPaternsData: {
     { 
       name: "Chain of Responsibility Design Pattern",
       emoji: "⛓️",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/chain-of-responsibility",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -158,7 +158,7 @@ export const designPaternsData: {
     { 
       name: "Observer Design Pattern",
       emoji: "👀",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/observer",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -174,7 +174,7 @@ export const designPaternsData: {
     { 
       name: "Strategy Design Pattern",
       emoji: "🐣",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/strategy",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -182,7 +182,7 @@ export const designPaternsData: {
     { 
       name: "Template Method Design Pattern",
       emoji: "🚠",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/template-method",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
@@ -190,7 +190,7 @@ export const designPaternsData: {
     { 
       name: "Visitor Method Design Pattern",
       emoji: "🪬",
-      author: "Mai Tue",
+      author: "Kien Trung",
       publish: new Date(2023, 4, 20),
       url: "#/visitor-method",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
