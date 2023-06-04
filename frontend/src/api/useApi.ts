@@ -8,6 +8,7 @@ export const useApi = () => {
     abstractFactoryPOST,
     prototypePOST,
     adapterPOST,
+    compositePOST,
     strategyPOST,
     statePOST, 
     observerPOST,
@@ -42,6 +43,13 @@ export const useApi = () => {
       code: code
     }
     return axiosWrapper.post(`/adapter`, body)
+  }
+
+  function compositePOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/composite`, body)
   }
 
   function statePOST(code: string) {

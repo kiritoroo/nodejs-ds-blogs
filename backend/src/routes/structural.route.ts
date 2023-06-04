@@ -1,4 +1,5 @@
 import { adapterMain } from "@controller/structural/adapter.main";
+import { compositeMain } from "@controller/structural/composite.main";
 import { Router, Request, Response } from "express";
 
 /**
@@ -12,6 +13,10 @@ const structuralRouter = Router();
 structuralRouter
   .route("/adapter")
   .post( adapterMain );
+  
+structuralRouter
+  .route("/composite")
+  .post( compositeMain );
   
 
 export default structuralRouter;
