@@ -189,7 +189,6 @@ export class Order {
     )
   }
 
-
   return (
     <React.Fragment>
       <ArticleHeader>
