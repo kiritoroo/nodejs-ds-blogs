@@ -17,6 +17,7 @@ import { BlogSection } from "@comp/Blog/BlogSection";
 import { BlogBullets } from "@comp/Blog/BlogBullets";
 import { BlogCodeBlock } from "@comp/Blog/BlogCodeBlock";
 import { BlogCodeEditor } from "@comp/Blog/BlogCodeEditor";
+import { BlogInlineCode } from "@comp/Blog/BlogInlineCode";
 
 interface Props {
   info: TDesignPatternData;
@@ -74,7 +75,7 @@ square.draw();`);
     content: (
       <React.Fragment>
         <BlogBullets
-          title="Strategy Design Pattern có các thành phần sau.">
+          title="Abstract Factory Design Pattern có các thành phần sau.">
           <li>AbstractFactory: Đây là giao diện hoặc lớp trừu tượng chứa các phương thức tạo ra các đối tượng liên quan hoặc phụ thuộc lẫn nhau.</li>
           <li>ConcreteFactory: Đây là lớp cụ thể kế thừa từ AbstractFactory và triển khai các phương thức để tạo ra các đối tượng cụ thể.</li>
           <li>AbstractProduct: Đây là giao diện hoặc lớp trừu tượng đại diện cho các đối tượng mà AbstractFactory sẽ tạo ra.</li>
@@ -90,7 +91,7 @@ square.draw();`);
       <React.Fragment>
         <BlogParagraph>
           Giả sử chúng ta đang xây dựng một ứng dụng đồ họa và cần tạo ra các hình học
-          như hình chữ nhật và hình vuông. Chúng ta sẽ sử dụng mẫu thiết kế Abstract Factory 
+          như hình chữ nhật và hình vuông. Chúng ta sẽ sử dụng mẫu thiết kế <BlogInlineCode>Abstract Factory </BlogInlineCode>
           để làm điều này.
         </BlogParagraph>
         <BlogCodeBlock
@@ -136,13 +137,13 @@ export class SquareFactory implements ShapeFactory {
 }`}
         />
         <BlogParagraph>
-          Trong ví dụ trên, chúng ta có hai sản phẩm cụ thể là Rectangle và Square, cả hai 
-          đều triển khai giao diện Shape. Chúng ta cũng có hai nhà máy cụ thể là RectangleFactory 
-          và SquareFactory, cả hai đều triển khai giao diện ShapeFactory để tạo ra các đối tượng tương ứng.
+          Trong ví dụ trên, chúng ta có hai sản phẩm cụ thể là <BlogInlineCode>Rectangle</BlogInlineCode> và <BlogInlineCode>Square</BlogInlineCode>, cả hai 
+          đều triển khai giao diện <BlogInlineCode>Shape</BlogInlineCode>. Chúng ta cũng có hai nhà máy cụ thể là <BlogInlineCode>RectangleFactory</BlogInlineCode> 
+          và <BlogInlineCode>SquareFactory</BlogInlineCode>, cả hai đều triển khai giao diện <BlogInlineCode>ShapeFactory</BlogInlineCode> để tạo ra các đối tượng tương ứng.
         </BlogParagraph>
         <BlogParagraph>
-          Khi chúng ta muốn tạo một hình chữ nhật, chúng ta sẽ sử dụng RectangleFactory. Tương tự, 
-          khi chúng ta muốn tạo một hình vuông, chúng ta sẽ sử dụng SquareFactory. Việc tạo đối tượng 
+          Khi chúng ta muốn tạo một hình chữ nhật, chúng ta sẽ sử dụng <BlogInlineCode>RectangleFactory</BlogInlineCode>. Tương tự, 
+          khi chúng ta muốn tạo một hình vuông, chúng ta sẽ sử dụng <BlogInlineCode>SquareFactory</BlogInlineCode>. Việc tạo đối tượng 
           sẽ được xử lý bởi các lớp nhà máy cụ thể mà chúng ta chọn, mà không cần phải chú thích trực 
           tiếp lớp cụ thể của sản phẩm.
         </BlogParagraph>

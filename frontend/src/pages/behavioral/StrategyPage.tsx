@@ -51,7 +51,7 @@ console.log(adultTicket.getPrice())`);
     content: (
       <React.Fragment>
         <BlogParagraph>
-        Mẫu thiết kế Strategy thuộc nhóm các mẫu thiết kế hành vi (Behavioral Design Patterns)
+          Mẫu thiết kế Strategy thuộc nhóm các mẫu thiết kế hành vi (Behavioral Design Patterns)
         </BlogParagraph>
         <BlogQuote>
           Mẫu thiết kế Strategy cho phép chọn một thuật toán từ một tập hợp các thuật toán
@@ -162,7 +162,6 @@ export class Ticket {
       </React.Fragment>
     )
   }
-
 
   return (
     <React.Fragment>
