@@ -1,5 +1,6 @@
 import { adapterMain } from "@controller/structural/adapter.main";
 import { compositeMain } from "@controller/structural/composite.main";
+import { facadeMain } from "@controller/structural/facade.main";
 import { Router, Request, Response } from "express";
 
 /**
@@ -18,5 +19,8 @@ structuralRouter
   .route("/composite")
   .post( compositeMain );
   
+structuralRouter
+  .route("/facade")
+  .post( facadeMain );
 
 export default structuralRouter;

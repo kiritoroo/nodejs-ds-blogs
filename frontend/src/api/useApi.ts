@@ -9,6 +9,7 @@ export const useApi = () => {
     prototypePOST,
     adapterPOST,
     compositePOST,
+    facadePOST,
     strategyPOST,
     statePOST, 
     observerPOST,
@@ -50,6 +51,13 @@ export const useApi = () => {
       code: code
     }
     return axiosWrapper.post(`/composite`, body)
+  }
+
+  function facadePOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/facade`, body)
   }
 
   function statePOST(code: string) {
