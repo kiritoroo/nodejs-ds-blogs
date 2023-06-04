@@ -11,7 +11,7 @@ export const builderMain = catchAsyncErrors(
   ) => {
     const body = req.body;
     let code = `
-      const {Product,ProductBuilder} = require("@pattern/behavioral/builder.pattern");
+      const {Product,ProductBuilder} = require("@pattern/creational/builder.pattern");
     `
     code += body.code;
 

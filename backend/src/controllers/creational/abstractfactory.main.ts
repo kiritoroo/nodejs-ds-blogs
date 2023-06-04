@@ -3,7 +3,7 @@ import { catchAsyncErrors } from "@middleware/catchAsyncErrors";
 import { IReqBody } from "@type/types";
 import execCode from "@util/execCode";
 
-export const singletonMain = catchAsyncErrors(
+export const abstractFactoryMain = catchAsyncErrors(
   async ( 
     req: Request<{}, {}, IReqBody>,
     res: Response,

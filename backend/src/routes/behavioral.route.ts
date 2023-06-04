@@ -8,7 +8,7 @@ import { bridgeMain } from "@controller/behavioral/bridge.main";
 import { decoratorMain } from "@controller/behavioral/decorator.main";
 import { flyweightMain } from "@controller/behavioral/flyweight.main";
 import { factoryMain } from "@controller/behavioral/factory.main";
-import { builderMain } from "@controller/behavioral/builder.main";
+import { builderMain } from "@controller/creational/builder.main";
 import { singletonMain } from "@controller/behavioral/singleton.main";
 
 
@@ -55,10 +55,6 @@ behavioralRouter
 behavioralRouter
   .route("/factory-method")
   .post(factoryMain)
-  
-behavioralRouter
-  .route("/builder")
-  .post(builderMain)
 
 behavioralRouter
   .route("/singleton")

@@ -12,7 +12,8 @@ const execCode = (code: string): string[] => {
   try {
     eval(code);
   } catch (error) {
-    console.error('Error:', "Error code");
+    console.error('Code: ', code)
+    console.error('Error: ', error);
     return ["Error code"];
   }
 

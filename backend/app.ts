@@ -25,8 +25,9 @@ app.use(
 );
 
 import behavioralRouter from '@route/behavioral.route';
+import creationalRouter from '@route/creational.route';
 app.use('/api', behavioralRouter);
-
+app.use('/api', creationalRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Root Endpoint: Test API');
