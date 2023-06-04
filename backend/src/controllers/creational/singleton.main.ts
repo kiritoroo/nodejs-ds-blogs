@@ -3,7 +3,7 @@ import { catchAsyncErrors } from "@middleware/catchAsyncErrors";
 import { IReqBody } from "@type/types";
 import execCode from "@util/execCode";
 
-export const factoryMain = catchAsyncErrors(
+export const singletonMain = catchAsyncErrors(
   async ( 
     req: Request<{}, {}, IReqBody>,
     res: Response,
@@ -11,7 +11,7 @@ export const factoryMain = catchAsyncErrors(
   ) => {
     const body = req.body;
     let code = `
-      const {ProductA, ProductB,ProductFactory} = require("@pattern/behavioral/factory.pattern");
+      const { Singleton } = require("@pattern/creational/singleton.pattern");
     `
     code += body.code;
 

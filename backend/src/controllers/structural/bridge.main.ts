@@ -11,7 +11,7 @@ export const bridgeMain = catchAsyncErrors(
   ) => {
     const body = req.body;
     let code = `
-      const {Circle,Rectangle,VectorRenderer, RasterRenderer,ShapeWithRenderer} = require("@pattern/behavioral/bridge.pattern");
+      const {Circle,Rectangle,VectorRenderer, RasterRenderer,ShapeWithRenderer} = require("@pattern/structural/bridge.pattern");
     `
     code += body.code;
 

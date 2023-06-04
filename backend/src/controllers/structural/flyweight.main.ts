@@ -11,7 +11,7 @@ export const flyweightMain = catchAsyncErrors(
   ) => {
     const body = req.body;
     let code = `
-      const {Circle,ShapeFactory} = require("@pattern/behavioral/flyweight.pattern");
+      const {Circle,ShapeFactory} = require("@pattern/structural/flyweight.pattern");
     `
     code += body.code;
 
