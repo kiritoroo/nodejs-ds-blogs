@@ -6,6 +6,7 @@ import { commandMain } from "@controller/behavioral/command.main";
 import { mementoMain } from "@controller/behavioral/memento.main";
 import { decoratorMain } from "@controller/behavioral/decorator.main";
 import { chainOfResponsibilityMain } from "@controller/behavioral/chainofresponsibility.main";
+import { observerMain } from "@controller/behavioral/observer.main";
 
 /**
  * @openapi
@@ -18,6 +19,10 @@ const behavioralRouter = Router();
 behavioralRouter
   .route("/chain-of-responsibility")
   .post( chainOfResponsibilityMain )
+
+behavioralRouter
+  .route("/observer")
+  .post( observerMain );
 
 behavioralRouter
   .route("/strategy")
