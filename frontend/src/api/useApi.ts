@@ -11,6 +11,7 @@ export const useApi = () => {
     compositePOST,
     facadePOST,
     proxyPOST,
+    chainOfResponsibilityPOST,
     strategyPOST,
     statePOST, 
     observerPOST,
@@ -66,6 +67,13 @@ export const useApi = () => {
       code: code
     }
     return axiosWrapper.post(`/proxy`, body)
+  }
+
+  function chainOfResponsibilityPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/chain-of-responsibility`, body)
   }
 
   function statePOST(code: string) {

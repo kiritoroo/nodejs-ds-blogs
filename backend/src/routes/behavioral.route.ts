@@ -5,6 +5,7 @@ import { mediatorMain } from "@controller/behavioral/mediator.main";
 import { commandMain } from "@controller/behavioral/command.main";
 import { mementoMain } from "@controller/behavioral/memento.main";
 import { decoratorMain } from "@controller/behavioral/decorator.main";
+import { chainOfResponsibilityMain } from "@controller/behavioral/chainofresponsibility.main";
 
 /**
  * @openapi
@@ -13,6 +14,10 @@ import { decoratorMain } from "@controller/behavioral/decorator.main";
  *   description: Router for Behavioral Category
  */
 const behavioralRouter = Router();
+
+behavioralRouter
+  .route("/chain-of-responsibility")
+  .post( chainOfResponsibilityMain )
 
 behavioralRouter
   .route("/strategy")
@@ -24,18 +29,18 @@ behavioralRouter
 
 behavioralRouter
   .route("/mediator")
-  .post(mediatorMain);
+  .post( mediatorMain );
 
 behavioralRouter
   .route("/command")
-  .post(commandMain)
+  .post( commandMain )
 
 behavioralRouter
   .route("/memento")
-  .post(mementoMain)
+  .post( mementoMain )
 
 behavioralRouter
   .route("/decorator")
-  .post(decoratorMain)
+  .post( decoratorMain )
 
 export default behavioralRouter;
