@@ -188,11 +188,11 @@ export const designPaternsData: {
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
     },
     { 
-      name: "Visitor Method Design Pattern",
+      name: "Visitor Design Pattern",
       emoji: "🪬",
       author: "Kien Trung",
       publish: new Date(2023, 4, 20),
-      url: "#/visitor-method",
+      url: "#/visitor",
       topics: [topicsData["pattern"], topicsData["ts"], topicsData["node"]]
     }
   ]

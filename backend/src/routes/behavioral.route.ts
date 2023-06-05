@@ -8,6 +8,7 @@ import { decoratorMain } from "@controller/behavioral/decorator.main";
 import { chainOfResponsibilityMain } from "@controller/behavioral/chainofresponsibility.main";
 import { observerMain } from "@controller/behavioral/observer.main";
 import { templateMethodMain } from "@controller/behavioral/templatemethod.main";
+import { visitorMain } from "@controller/behavioral/visitor.main";
 
 /**
  * @openapi
@@ -16,6 +17,10 @@ import { templateMethodMain } from "@controller/behavioral/templatemethod.main";
  *   description: Router for Behavioral Category
  */
 const behavioralRouter = Router();
+
+behavioralRouter
+  .route("/visitor")
+  .post( visitorMain );
 
 behavioralRouter
   .route("/template-method")

@@ -24,7 +24,7 @@ import ObserverPage from "@page/behavioral/ObserverPage"
 import StatePage from "@page/behavioral/StatePage"
 import StrategyPage from "@page/behavioral/StrategyPage"
 import TemplateMethodPage from "@page/behavioral/TemplateMethodPage"
-import VisitorMethodPate from "@page/behavioral/VisitorMethodPate"
+import VisitorMethodPate from "@page/behavioral/VisitorPage"
 
 export const App = () => {
   const location = useLocation();
@@ -58,7 +58,7 @@ export const App = () => {
         <Route path="/state" element={<StatePage info={designPaternsData.behavioral[6]}/>}/>
         <Route path="/strategy" element={<StrategyPage info={designPaternsData.behavioral[7]}/>}/>
         <Route path="/template-method" element={<TemplateMethodPage info={designPaternsData.behavioral[8]}/>}/>
-        <Route path="/visitor-method" element={<VisitorMethodPate info={designPaternsData.behavioral[9]}/>}/>
+        <Route path="/visitor" element={<VisitorMethodPate info={designPaternsData.behavioral[9]}/>}/>
       </Routes>
     </React.Fragment>
   )
