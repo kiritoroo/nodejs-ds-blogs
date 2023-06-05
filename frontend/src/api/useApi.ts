@@ -5,6 +5,7 @@ const axiosWrapper = useAxiosWrapper();
 export const useApi = () => {
 
   return {
+    templateMethodPOST,
     abstractFactoryPOST,
     prototypePOST,
     adapterPOST,
@@ -25,6 +26,13 @@ export const useApi = () => {
     factoryPOST,
     builderPOST,
     singletonPOST,
+  }
+
+  function templateMethodPOST(code: string) {
+    const body = {
+      code: code
+    }
+    return axiosWrapper.post(`/template-method`, body)
   }
 
   function abstractFactoryPOST(code: string) {

@@ -153,7 +153,7 @@ export class Ticket {
           Chương trình Demo
         </BlogParagraph>
         <BlogCodeEditor
-          lang="ts"
+          lang="js"
           code={ codeInput }
           setCode={ setCodeInput }
           onRun={ handleCallAPI }
